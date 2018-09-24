@@ -1,4 +1,4 @@
-package com.example.hou.algorithminjava;
+package com.example.hou.algorithminjava.sort;
 
 /**
  * Created by hou on 2018/9/23.
