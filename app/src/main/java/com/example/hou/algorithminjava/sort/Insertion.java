@@ -4,6 +4,14 @@ import com.example.hou.algorithminjava.Example;
 
 /**
  * Created by hou on 2018/9/24.
+ *
+ *
+ * 插入排序
+ *
+ * 概念 数组中 每个元素距离它最终位置都不远
+ *     数组中 只有几个元素的位置不对
+ *
+ *     插入排序对着样的数据很有效  选择排序就不好
  */
 
 public class Insertion {
