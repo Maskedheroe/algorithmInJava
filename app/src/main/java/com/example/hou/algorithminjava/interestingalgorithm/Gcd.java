@@ -16,4 +16,19 @@ public class Gcd {
         return a;
     }
 
+    //逆归实现
+    public int gcd2(int a,int b) {
+        //直到满足此条件逆归退出
+        if(b == 0) {
+            return a;
+        }
+        if(a < 0) {
+            return gcd2(-a,b);
+        }
+        if(b < 0) {
+            return gcd2(a,-b);
+        }
+        return gcd2(b,a % b);
+    }
+
 }
