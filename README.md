@@ -8,3 +8,4 @@ practice algorithm
 5. add practice
 6. 合并两个链表的算法
 7. add gcd
+8. add selection
