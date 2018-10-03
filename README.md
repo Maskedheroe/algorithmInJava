@@ -7,3 +7,4 @@ practice algorithm
 4. add LinkedList
 5. add practice
 6. 合并两个链表的算法
+7. add gcd
