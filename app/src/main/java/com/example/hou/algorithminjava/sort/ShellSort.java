@@ -17,7 +17,7 @@ public class ShellSort {
         }
         while (h>= 1){
             for (int i = h; i < N; i++) {
-                for (int j=i;j>=h&&Example.less(a[j],a[j-h])){
+                for (int j=i;j>=h&&Example.less(a[j],a[j-h]);j-=h){
                     Example.exch(a,j,j-h);
                 }
             }
