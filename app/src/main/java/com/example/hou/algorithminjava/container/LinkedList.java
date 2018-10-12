@@ -1,4 +1,4 @@
-package com.example.hou.algorithminjava.container;
+
 
 public class LinkedList {
 
@@ -65,7 +65,9 @@ public class LinkedList {
             //为空链表 或者插入位置不合法
             return false;
         }
+        newNode.priNode = mHeadNode;
         newNode.nextNode = mHeadNode.nextNode;
+        mHeadNode.nextNode.priNode = newNode;
         mHeadNode.nextNode = newNode;
         return true;
 
@@ -83,7 +85,8 @@ public class LinkedList {
             temp = temp.nextNode;
         }
 
-        temp.nextNode = temp.nextNode.nextNode;
+        temp.priNode.nextNode = temp.nextNode;
+        temp.nextNode.priNode = temp.priNode;
         return true;
     }
 
@@ -133,6 +136,7 @@ public class LinkedList {
     private static class Node<T> {
         T t;  //泛型 使用时进行类型转换
         Node<T> nextNode;
+        Node<T> priNode;
 
         public T getT() {
             return t;
@@ -147,4 +151,3 @@ public class LinkedList {
 
 
 }
-
