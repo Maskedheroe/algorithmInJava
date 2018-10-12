@@ -10,3 +10,4 @@ practice algorithm
 7. add gcd
 8. add selection
 9. add shellsort
+10. add mergeSort
