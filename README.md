@@ -11,3 +11,4 @@ practice algorithm
 8. add selection
 9. add shellsort
 10. add mergeSort
+11. add stack
