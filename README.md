@@ -12,4 +12,4 @@ practice algorithm
 9. add shellsort
 10. add mergeSort
 11. add stack
-
+12. add roulette
