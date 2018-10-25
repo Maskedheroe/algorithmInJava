@@ -61,7 +61,6 @@ public class QueryStr {
     boolean anagram(String s,String t){
         if (s.isEmpty()||t.isEmpty()){
             return false;
-
         }
         if (s.length()!=t.length()){
             return false;
