@@ -55,6 +55,7 @@ public class QueryStr {
      * 对字符串 s 自增，字符串 t 递减，再次遍历判断letterCount数组的值，小于0时返回false.
      * 在字符串长度较长(大于所有可能的字符数)时，还可对第二个for循环做进一步优化，
      * 即t.size() > 256时，使用256替代t.size(), 使用i替代t[i].
+     *
      * */
 
     boolean anagram(String s,String t){
