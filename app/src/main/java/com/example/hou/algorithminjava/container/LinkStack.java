@@ -1,8 +1,7 @@
 package com.example.hou.algorithminjava.container;
+
 public class LinkStack {
     //链式栈
-
-
     private int mCount = 0;
 
     private StackNode top = null;
@@ -19,27 +18,27 @@ public class LinkStack {
     class StackNode{
         //栈节点
 
-        int data = 0;
+        Object data = 0;
 
         StackNode next = null;
 
-        StackNode(int data){
+        StackNode(Object data){
             this.data = data;
         }
     }
 
 
-    public boolean Push(int data){
-        StackNode s = new StackNode(data);
+    public boolean Push(Object data){
+        StackNode s = new StackNode( data);
         s.next = this.top;  //把当前栈顶元素赋值给新节点的直接后继
         this.top = s;
         this.mCount ++ ;
         return  true;
     }
 
-    public int Pop() throws Exception {
+    public Object Pop() throws Exception {
         StackNode node = new StackNode(0);
-        int temp = 0;
+        Object temp = 0;
         if (mCount==0){
             throw new Exception("栈为空");
         }
@@ -64,7 +63,7 @@ public class LinkStack {
         return mCount;
     }
 
-    public int GetLinkStackTop(){
+    public Object GetLinkStackTop(){
         return (this.top==null)?0:this.top.data;
     }
 
@@ -81,8 +80,5 @@ public class LinkStack {
             node = node.next;
         }
     }
-
-
-
-
 }
+
