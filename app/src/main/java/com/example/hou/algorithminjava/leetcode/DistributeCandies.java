@@ -38,7 +38,11 @@ HashSet初始化（构造方法）是采用HashMap实现的（不信看源码）
 HashMap的key=HashSet的对象，HashMap的value=HashSet中定义的一个统一常量private static final Object PRESENT = new Object()。  
  也就是说，在hashset中，我们用add方法添加元素时，传给底层hashmap实例的还是键值对（两个对象），
  只不过key直接就是对象元素本身，而value则是一个object常量（这就是让我们把这个value忽略掉，当成只传了一个对象）
-hashset中的添加方法是add，而hashmap中的添加方法是put。                                                                                  put（）方法应用于map集合中，add（）方法应用于set集合中。                                                                                                                 二者的主要区别是：返回值类型不一样。add（）放回布尔（boolean）类型。                                                                                              因为像Set集合中不允许添加重复的元素。当HashSet调用add（）方法时，如果返回false，表示添加不成功。                                               put（）的使用是：添加时出现相同的键，那么后添加的值会替换（覆盖）掉此键对应的原来的值。并返回此键对应的原来的值。
+hashset中的添加方法是add，而hashmap中的添加方法是put。                                                                                 
+ put（）方法应用于map集合中，add（）方法应用于set集合中。                                                                                                                 
+ 二者的主要区别是：返回值类型不一样。add（）放回布尔（boolean）类型。                                                                                             
+ 因为像Set集合中不允许添加重复的元素。当HashSet调用add（）方法时，如果返回false，表示添加不成功。                                               
+ put（）的使用是：添加时出现相同的键，那么后添加的值会替换（覆盖）掉此键对应的原来的值。并返回此键对应的原来的值。
 
  
 }
