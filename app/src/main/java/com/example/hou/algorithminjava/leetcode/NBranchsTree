@@ -1,21 +1,27 @@
-/*
-// Definition for a Node.
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Stack;
+
+public class CodeOne {
 class Node {
     public int val;
     public List<Node> children;
 
-    public Node() {}
+    public Node() {
+    }
 
-    public Node(int _val,List<Node> _children) {
+    public Node(int _val, List<Node> _children) {
         val = _val;
         children = _children;
     }
-};
-*/
-class Solution {
-    
-    public List<Integer> preorder(Node root) {
-          if (root == null) {
+}
+
+    class Solution {
+
+        public List<Integer> preorder(Node root) {
+
+            if (root == null) {
                 return new LinkedList<>();
             }
 
@@ -26,11 +32,17 @@ class Solution {
             while (rootQueue.peek() != null) {
                 Node newNode = rootQueue.pop();
                 list.add(newNode.val);
-                for (int i = newNode.children.size() - 1; i >= 0; i--) {
-                    rootQueue.push(newNode.children.get(i));
+                for (int i = newNode.children.size() - 1; i >= 0; i--) {   //这样倒序遍历children 再压入队列 可以保证深度优先(用栈结构也得用倒序压入栈)
+                    rootQueue.push(newNode.children.get(i));   //压入队列
                 }
             }
 
             return list;
+        }
+
+        /*
+        * */
     }
+
+
 }
