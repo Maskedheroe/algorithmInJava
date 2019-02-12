@@ -1,0 +1,60 @@
+class MinStack {
+
+    public ListNode head;
+
+    /**
+     * initialize your data structure here.
+     */
+    public MinStack() {
+        head = null;
+    }
+
+    public void push(int x) {
+        ListNode tmp = head;
+        head = new ListNode(x);
+        head.next = tmp;
+    }
+
+    public void pop() {
+        if (head != null) {
+            if (head.next == null) {
+                head = null;
+            } else {
+                head = head.next;
+            }
+
+        }
+    }
+
+    public int top() {
+        return head == null ? 0 : head.value;
+    }
+
+    public int getMin() {
+        int min = head == null ? 0 : head.value;
+        ListNode temp = head;
+        while (head != null) {
+            if (head.value < min) {
+                min = head.value;
+            }
+            head = head.next;
+        }
+        //while遍历要注意 对于原本队列的影响 是否要重置head
+        head = temp;
+        return min;
+    }
+
+
+    public class ListNode {
+        int value;
+        ListNode next;
+
+        public ListNode() {
+
+        }
+
+        public ListNode(int x) {
+            this.value = x;
+        }
+    }
+}
