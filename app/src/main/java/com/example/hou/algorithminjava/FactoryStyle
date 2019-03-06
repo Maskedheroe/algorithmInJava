@@ -1,0 +1,115 @@
+package com.example.hou.algorithminjava.sort
+
+import java.lang.Exception
+
+public abstract class IOHandler{
+
+    public abstract fun add(id:String,name:String)
+
+    public abstract fun remove(id: String)
+
+    public abstract fun update(id: String,name: String)
+
+    public abstract fun query(id: String):String
+
+
+}
+
+
+public class FileHandler : IOHandler() {
+    override fun add(id: String, name: String) {
+        //do
+    }
+
+    override fun remove(id: String) {
+        //do
+    }
+
+    override fun update(id: String, name: String) {
+        //do
+    }
+
+    override fun query(id: String):String {
+        //do
+        return "AigeStudio"
+    }
+
+}
+
+public class XMLHandler : IOHandler() {
+    override fun add(id: String, name: String) {
+        //do
+
+    }
+
+    override fun remove(id: String) {
+        //do
+
+    }
+
+    override fun update(id: String, name: String) {
+        //do
+
+    }
+
+    override fun query(id: String): String {
+        return "SMBrother"
+    }
+
+}
+
+public class DBHandler : IOHandler() {
+    override fun add(id: String, name: String) {
+        //do
+
+    }
+
+    override fun remove(id: String) {
+        //do
+    }
+
+    override fun update(id: String, name: String) {
+        //do
+    }
+
+    override fun query(id: String): String {
+        //do
+        return "SQLite"
+    }
+
+}
+
+public class IOFactory{
+    /**
+     *
+     * 工厂类 获取IO处理者
+     *
+     * */
+    
+    /**
+     * 
+     * 此处使用了泛型  来靠反射获取 子类 进行实例化
+     * 
+     * */
+
+    companion object {
+        public fun <T> getIOHandler(clz:Class<T>) : T{
+            var handler : IOHandler ?  = null
+            
+            try {
+                handler = Class.forName(clz.name).newInstance() as IOHandler
+            }catch (e:Exception){
+                e.printStackTrace()
+            }
+            
+            return handler as T 
+        }
+    }
+}
+
+
+public class Test{
+    fun test(){
+        var handler : IOHandler = IOFactory.getIOHandler(FileHandler::class.java) //如此调用 不用再new 直接使用反射Class类
+    }
+}
