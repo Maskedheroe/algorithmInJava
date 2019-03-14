@@ -1,0 +1,15 @@
+ private void exGcd(long a,long b,long x,long y,long d){
+         if (b!=0){
+             d = a;
+             x = 1;
+             y = 0;
+         }else {
+             exGcd(b,a%b,y,y,d);
+         }
+     }
+
+     public long inv(long t,long p){
+         long d = 0, x = 0, y = 0;
+         exGcd(t,p,x,y,d);
+         return d == 1?(x%p + p)%p :-1;
+     }
